@@ -1,0 +1,37 @@
+body {
+    background-color: lightblue;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-box {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.image-row {
+    display: flex; /* manages items in a single row */
+    justify-content: center; /*center images */
+    gap: 5px; /* spacing between images */
+}
+
+.image-row img {
+    width: 200px; /*forces same width for all images */
+    height: 200px; /*forces same height for all images */
+    object-fit: cover; /* prevents stretching */
+    border-radius: 10px; /* rounds the corners of images */
+}
+
+figure {
+    text-align: center;
+    width: 150px;
+}
+
+figcaption {
+    color: #555;
+    font-style: italic;
+    padding-top: 8px;
+}
