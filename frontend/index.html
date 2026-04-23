@@ -1,43 +1,99 @@
 <!doctype html>
-<html>
-<head>
+<html lang="en">
+  <head>
     <title>Spidey Senses ASM</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="center-box">
-        <h1>Spidey Senses ASM</h1>
-        <h2>SP-108-Green-ASM</h2>
-        <p>4850, Section 1, Spring 2026</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="team logo" />
+        </div>
 
+        <nav>
+          <a
+            href="#"
+            class="active"
+            onclick="
+              go('home', this);
+              return false;
+            "
+            >Home</a
+          >
+          <a
+            href="#"
+            onclick="
+              go('screenshots', this);
+              return false;
+            "
+            >Screenshots</a
+          >
+        </nav>
+      </div>
+
+      <div class="main">
+        <div id="page-home" class="page active">
+          <div class="home">
+            <div class="home-wrapper">
+              <div class="home-main">
+                <p class="home-label">
+                  SP-108-Green-ASM // 4850 Section 1 // Kennesaw State
+                  University
+                </p>
+                <h1>SpideySenses</h1>
+                <p class="subtitle">Attack Surface Management System</p>
+              </div>
+
+              <div class="image-row">
+                <div class="team-member">
+                  <img src="alex-photo.jpeg" alt="Alex's Photo" />
+                  <p>Alex Tidwell</p>
+                </div>
+                <div class="team-member">
+                  <img src="brianna-photo.jpeg" alt="Brianas photo" />
+                  <p>Brianna Lewis</p>
+                </div>
+                <div class="team-member">
+                  <img src="kat-photo.png" alt="Kats photo" />
+                  <p>Katherine Smith</p>
+                </div>
+                <div class="team-member">
+                  <img src="phillip-photo.jpg" alt="Phillips Photo" />
+                  <p>Phillip Eiser</p>
+                </div>
+                <div class="team-member">
+                  <img src="sumaya-photo.jpeg" alt="Sumayas photo" />
+                  <p>Sumaya</p>
+                </div>
+              </div>
+            </div>
+            <div class="home-links">
+              <p class="links">Documents</p>
+              <a href="docs/test-plan.pdf" target="_blank">Test PLan</a>
+              <a href="docs/developement.pdf" target="_blank">Dev doc</a>
+              <a href="https://youtube.com" target="_blank"
+                >Final Presentation Video</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <h2>Our Team</h2>
-
-    <div class="image-row">
-        <figure>
-        <img src="alex-photo.jpeg" alt="Alex's Photo">
-        <figcaption>Alex Tidwell</figcaption>
-        </figure>
-        <figure>
-        <img src="brianna-photo.jpeg" alt="Brianna's Photo">
-        <figcaption>Brianna Lewis</figcaption>
-        </figure>
-        <figure>
-        <img src="kat-photo.png" alt="Kat's Photo">
-        <figcaption>Katherine Smith</figcaption>
-        </figure>
-        <figure>
-        <img src="sumaya-photo.jpeg" alt="Sumaya's Photo">
-        <figcaption>Sumaya Tamenne</figcaption>
-        </figure>
-        <figure>
-        <img src="phillip-photo.jpg" alt="Phillip's Photo">
-        <figcaption>Phillip Eiser</figcaption>
-        </figure>
-    </div>
-
-    <h2>Documents</h2>
-    <button onclick="window.open('project-plan.pdf', '_blank')">Open Project Plan</button>
-</body>
+    <script>
+      function go(id, e) {
+        document
+          .querySelectorAll(".page")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll("nav a")
+          .forEach((a) => a.classList.remove("active"));
+        document.getElementById("page-" + id).classList.add("active");
+        if (e) e.classList.add("active");
+      }
+    </script>
+  </body>
 </html>
